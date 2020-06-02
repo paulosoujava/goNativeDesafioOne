@@ -78,10 +78,11 @@ app.post("/repositories/:id/like", (request, response) => {
     if( repIdx < 0 ){
       return response.status(400).json({error: 'Repositorie not found'})
     }
+    
     repositories[repIdx]['like'] = repositories[repIdx]['like'] + 1;
-    console.log(repositories[repIdx]) 
+    
 
-  return response.status(204).json();
+  return response.status(204).json(repositories[repIdx]['like'] );
 });
 
 app.listen(3334, ()=>{
