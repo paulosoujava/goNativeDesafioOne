@@ -82,7 +82,7 @@ app.post("/repositories/:id/like", (request, response) => {
     repositories[repIdx]['like'] = repositories[repIdx]['like'] + 1;
     
 
-  return response.status(204).json(repositories[repIdx]['like'] );
+  return response.json(repositories[repIdx]);
 });
 
 app.listen(3334, ()=>{
